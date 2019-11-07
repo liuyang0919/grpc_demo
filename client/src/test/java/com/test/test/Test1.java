@@ -8,8 +8,11 @@ import java.util.concurrent.locks.ReentrantLock;
 
 public class Test1 {
 
-    int[] arr = {1, 2, 3, 4, 5, 6,7, 2, 3, 4, 5, 6,7, 2, 3, 4, 5, 6,7, 2, 3, 4, 5, 6,7, 2, 3, 4, 5, 6,7};
+    int[] arr = {1, 2, 3, 4, 5, 6, 7, 2, 3, 4, 5, 6, 7, 2, 3, 4, 5, 6, 7, 2, 3, 4, 5, 6, 7, 2, 3, 4, 5, 6, 7};
 
+    /**
+     * 线程间的唤醒
+     */
     @Test
     public void test1() {
 
@@ -26,7 +29,7 @@ public class Test1 {
             try {
                 while (true) {
                     condition.await();
-                    if(ttt.getIndex() >= arr.length){
+                    if (ttt.getIndex() >= arr.length) {
                         break;
                     }
                     ttt(ttt);
@@ -43,7 +46,7 @@ public class Test1 {
             try {
                 while (true) {
                     condition1.await();
-                    if(ttt.getIndex() >= arr.length){
+                    if (ttt.getIndex() >= arr.length) {
                         break;
                     }
                     ttt(ttt);
@@ -60,7 +63,7 @@ public class Test1 {
             try {
                 while (true) {
                     condition2.await();
-                    if(ttt.getIndex() >= arr.length){
+                    if (ttt.getIndex() >= arr.length) {
                         break;
                     }
                     ttt(ttt);
